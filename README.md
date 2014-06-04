@@ -1,0 +1,1 @@
+Simple frame animation example to run a sqequence of images on an HTML5 canvas

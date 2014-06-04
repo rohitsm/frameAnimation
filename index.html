@@ -1,0 +1,49 @@
+<html>
+<head>
+
+</head>
+
+<body>
+	<canvas id="animation" width="640" height="320" style="border: 1px black solid"></canvas>
+
+	<br><br>
+	<video width="640" height="320" controls >
+		<source src="vid.mp4" type="video/mp4">
+	</video>
+
+</body>
+
+
+<script>
+	
+	var canvas = document.getElementById("animation");
+	
+	var imgNumber = 1;
+	var lastImgNumber = 20;
+
+	var ctx = canvas.getContext('2d');
+	var img = new Image;
+	img.onload = function(){
+	  ctx.clearRect( 0, 0, ctx.canvas.width, ctx.canvas.height );
+	  ctx.drawImage( img, 0, 0 );
+	};
+
+	// setInternval method is used to run an expression/action at regular intervals
+	var timer = setInterval( function(){
+	  if (imgNumber>lastImgNumber){
+	    clearInterval( timer );
+	  }else{
+	  	// File location
+	    img.src = "images/img_"+( imgNumber++ )+".jpg";
+	  }
+	}, 1000/30 ); //Draw at 30 frames per second
+
+
+
+
+
+
+</script>
+
+
+</html>
